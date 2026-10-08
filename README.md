@@ -127,6 +127,15 @@ Sessions built on 2026-09-15 from this machine's own recording (17:32:45 to 18:3
 
 `python tools/hbr.py data/recordings/<name>.hbr moments` lists the times worth recording in each.
 
+## Replay Binance's public archive
+
+No collector needed: `tools/fetch_binance_archive.sh BTCUSDT 2024-03` downloads a month of
+best bid/ask and trades from data.binance.vision, and `python tools/binance_session.py --day 2024-03-15`
+turns a day into a session. Details and limits in [docs/binance-archive.md](docs/binance-archive.md).
+
+On macOS and Linux use `.venv/bin/python`; `tools/session.py` picks the right paths on each platform
+(`tools/collect.py` remains Windows-only).
+
 ## Dashboard
 
 URL parameters
